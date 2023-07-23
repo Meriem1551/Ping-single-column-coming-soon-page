@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Ping coming soon page</title>
+</head>
+<body>
+  <header>
+    <img src="./images/logo.svg" alt="logo"/>
+  </header>
+  <main>
+    <h1 id="grey-word">We are launching <strong> soon!</strong></h1>
+    <p>Subscribe and get notified</p>
+    <div id="email-form">
+      <div id="email-input">
+        <input type="email" id="email" placeholder="Your email address.."/>
+        <div id="button" onclick="isValid()">Notify Me</div>
+      </div>
+      <small>Please provide a valid email address</small>
+    </div>
+    <img src="./images/illustration-dashboard.png" alt="illustration-dashboard">
+  </main>
+  <footer>
+    <div id="social-media">
+      <div class="social"><img src="./images/icons8-facebook (2).svg" alt="icons8-facebook"/></div>
+      <div class="social"><img src="./images/icons8-twitter.svg" alt="icons8-twitter"/></div>
+      <div class="social"><img src="./images/icons8-instagram (5).svg" alt="icons8-instagram"/></div>
+    </div>
+    <h5>&copy; copyright Ping. All rights reserverd. </h5>
+  </footer>
+
+  <script>
+    let email=document.getElementById('email');
+    let emailForm=document.getElementById('email-form')
+    let pattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    function isValid(){
+      const errorMessage=emailForm.querySelector('small');
+      if(!email.value.match(pattern)){
+        email.style.borderColor="hsl(354, 100%, 66%)";
+        errorMessage.style.visibility="visible";
+      }
+      else{
+        email.style.borderColor="";
+        errorMessage.style.visibility="hidden";
+      }
+    }
+  </script>
+</body>
+</html>
